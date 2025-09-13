@@ -320,3 +320,25 @@ class AntiGateTaskProxyless(BaseTask):
 
 class AntiGateTask(ProxyMixin, AntiGateTaskProxyless):
     pass
+
+
+class TurnstileTaskProxyLess(BaseTask):
+    type = "TurnstileTaskProxyLess"
+    websiteURL = None
+    websiteKey = None
+    action = None
+    cData = None
+
+    def __init__(self, website_url, websiteKey, action, cData):
+        self.websiteURL = website_url
+        self.websiteKey = websiteKey
+        self.action = action
+        self.cData = cData
+
+    def serialize(self, **data):
+        data = super(TurnstileTaskProxyLess, self).serialize(**data)
+        data["websiteURL"] = self.websiteURL
+        data["websiteKey"] = self.websiteKey
+        data["action"] = self.action
+        data["cData"] = self.cData
+        return data

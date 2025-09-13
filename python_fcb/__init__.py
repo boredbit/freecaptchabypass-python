@@ -16,7 +16,8 @@ from .tasks import (
     GeeTestTaskProxyless,
     GeeTestTask,
     AntiGateTaskProxyless,
-    AntiGateTask
+    AntiGateTask,
+    TurnstileTaskProxyLess
 )
 from .exceptions import FCBException
 
