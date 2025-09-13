@@ -1,5 +1,5 @@
 from .base import FCBClient
-from pkg_resources import get_distribution, DistributionNotFound
+from importlib.metadata import version
 from .tasks import (
     NoCaptchaTaskProxylessTask,
     RecaptchaV2TaskProxyless,
@@ -23,7 +23,7 @@ from .exceptions import FCBException
 AnticatpchaException = FCBException
 
 try:
-    __version__ = get_distribution(__name__).version
-except DistributionNotFound:
+    __version__ = version("python_fcb")
+except Exception:
     # package is not installed
     pass
