@@ -329,8 +329,8 @@ class TurnstileTaskProxyLess(BaseTask):
     action = None
     cData = None
 
-    def __init__(self, website_url, websiteKey, action, cData):
-        self.websiteURL = website_url
+    def __init__(self, websiteURL, websiteKey, action, cData):
+        self.websiteURL = websiteURL
         self.websiteKey = websiteKey
         self.action = action
         self.cData = cData
